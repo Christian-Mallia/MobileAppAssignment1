@@ -56,7 +56,7 @@ public class DishListActivity extends AppCompatActivity {
                 dishes.add(d);
             } while (c.moveToNext());
         }
-        if (c != null && !c.isClosed()) c.close();
+        if (!c.isClosed()) c.close();
 
         adapter = new DishListAdapter(dishes, dishId -> {
             Intent i = new Intent(DishListActivity.this, DishFormActivity.class);

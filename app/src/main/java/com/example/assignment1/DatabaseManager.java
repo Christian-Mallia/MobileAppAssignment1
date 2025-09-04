@@ -21,7 +21,7 @@ public class DatabaseManager {
 
     private static final String CREATE_TABLE_DISH =
             "CREATE TABLE " + TABLE_DISH + " (" +
-                    COL_DISH_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    COL_DISH_ID + " INTEGER PRIMARY KEY, " +
                     COL_DISH_NAME + " TEXT, " +
                     COL_DISH_TYPE + " TEXT, " +
                     COL_DISH_ING + " TEXT, " +
@@ -65,9 +65,10 @@ public class DatabaseManager {
     }
 
     // ---------------- DISH CRUD ----------------
-    public boolean addDish(String name, String type, String ingredients, float price) {
+    public boolean addDish(int id, String name, String type, String ingredients, float price) {
         synchronized (this.db) {
             ContentValues values = new ContentValues();
+            values.put(COL_DISH_ID, id);   // now saving entered ID
             values.put(COL_DISH_NAME, name);
             values.put(COL_DISH_TYPE, type);
             values.put(COL_DISH_ING, ingredients);
@@ -101,9 +102,10 @@ public class DatabaseManager {
     }
 
     // ---------------- ORDER CRUD ----------------
-    public boolean addOrder(String diningOption, String tableNumber, String dishNames, Float totalPrice) {
+    public boolean addOrder(int id, String diningOption, String tableNumber, String dishNames, Float totalPrice) {
         synchronized (this.db) {
             ContentValues values = new ContentValues();
+            values.put(COL_ORDER_ID, id);   // save entered ID
             values.put(COL_ORDER_DINING, diningOption);
             values.put(COL_ORDER_TABLE, tableNumber);
             values.put(COL_ORDER_DISHES, dishNames);

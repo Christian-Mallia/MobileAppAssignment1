@@ -24,10 +24,14 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> 
     }
 
     public static class VH extends RecyclerView.ViewHolder {
-        TextView tvSummary;
+        TextView tvOrderId, tvDining, tvTable, tvDishes, tvTotal;
         public VH(@NonNull View itemView) {
             super(itemView);
-            tvSummary = itemView.findViewById(R.id.tvSummary);
+            tvOrderId = itemView.findViewById(R.id.tvOrderId);
+            tvDining = itemView.findViewById(R.id.tvDining);
+            tvTable = itemView.findViewById(R.id.tvTable);
+            tvDishes = itemView.findViewById(R.id.tvDishes);
+            tvTotal = itemView.findViewById(R.id.tvTotal);
         }
     }
 
@@ -42,9 +46,13 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> 
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
         Order o = items.get(position);
-        String summary = o.getDiningOption() + " | Table: " + o.getTableNumber()
-                + " | $" + o.getTotalPrice();
-        holder.tvSummary.setText(summary);
+
+        holder.tvOrderId.setText("Order ID: " + o.getId());
+        holder.tvDining.setText("Dining: " + o.getDiningOption());
+        holder.tvTable.setText("Table: " + (o.getTableNumber().isEmpty() ? "-" : o.getTableNumber()));
+        holder.tvDishes.setText("Dishes: " + o.getDishNames());
+        holder.tvTotal.setText("Total: $" + o.getTotalPrice());
+
         holder.itemView.setOnClickListener(v -> listener.onClick(o.getId()));
     }
 
