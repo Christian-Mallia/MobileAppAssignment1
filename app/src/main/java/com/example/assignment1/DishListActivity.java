@@ -29,10 +29,11 @@ public class DishListActivity extends AppCompatActivity {
         db = new DatabaseManager(this);
         loadDishes();
 
-        FloatingActionButton fabAdd = findViewById(R.id.fabAddDish);
-        fabAdd.setOnClickListener(v -> {
-            startActivity(new Intent(DishListActivity.this, DishFormActivity.class));
+        findViewById(R.id.btnAdd).setOnClickListener(v -> {
+            startActivity(new Intent(this, DishFormActivity.class));
         });
+
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
     }
 
     @Override

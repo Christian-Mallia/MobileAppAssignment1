@@ -8,6 +8,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable outline_info_24
 id addDish
+id btnAdd
 id btnBack
 id btnDelete
 id btnDishes
@@ -15,8 +16,9 @@ id btnLogin
 id btnLogout
 id btnOrders
 id btnSave
-id createOrder
-id etDishes
+id containerDrink
+id containerEntree
+id containerMain
 id etID
 id etId
 id etIngredients
@@ -26,8 +28,6 @@ id etPrice
 id etTable
 id etTotal
 id etUsername
-id fabAddDish
-id fabAddOrder
 id img
 id login
 id loginForm
@@ -41,12 +41,15 @@ id rgDining
 id rgType
 id rvDishes
 id rvOrders
+id tvCreateOrder
 id tvDining
 id tvDishes
 id tvIdLabel
 id tvName
 id tvOrderId
+id tvOrderIdLabel
 id tvTable
+id tvTableNumberLabel
 id tvTotal
 id tvTypePrice
 layout activity_dish_form

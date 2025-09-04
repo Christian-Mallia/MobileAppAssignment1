@@ -13,7 +13,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/createOrder"
+                android:id="@+id/tvCreateOrder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -22,7 +22,10 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvOrderIdLabel"
                 android:text="Order ID"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -30,44 +33,100 @@
                 android:id="@+id/etId"
                 android:hint="Order ID"
                 android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <RadioGroup
                 android:id="@+id/rgDining"
                 android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/rbDineIn"
-                    android:text="Dine-in"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Dine-in" />
 
                 <RadioButton
                     android:id="@+id/rbTakeAway"
                     android:text="Take-away"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content" />
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/tvTableNumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Table Number"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp" />
+
             <EditText
                 android:id="@+id/etTable"
-                android:hint="Table number (if dine-in)"
+                android:hint="Table Number (Dine in only)"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/etDishes"
-                android:hint="Dish names (comma separated)"
+            <TextView
+                android:text="Entrees"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/containerEntree"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Mains"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/containerMain"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Drinks"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/containerDrink"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Total Price -->
+            <TextView
+                android:text="Total Price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/etTotal"
-                android:hint="Total price"
-                android:inputType="numberDecimal"
+                android:enabled="false"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

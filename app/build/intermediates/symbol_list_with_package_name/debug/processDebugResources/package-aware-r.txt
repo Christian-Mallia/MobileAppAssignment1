@@ -3213,6 +3213,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnAdd
 id btnBack
 id btnDelete
 id btnDishes
@@ -3247,6 +3248,9 @@ id compress
 id confirm_button
 id constraint
 id container
+id containerDrink
+id containerEntree
+id containerMain
 id content
 id contentPanel
 id contiguous
@@ -3255,7 +3259,6 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
-id createOrder
 id currentState
 id custom
 id customPanel
@@ -3303,7 +3306,6 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id escape
-id etDishes
 id etID
 id etId
 id etIngredients
@@ -3316,8 +3318,6 @@ id etUsername
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fabAddDish
-id fabAddOrder
 id fade
 id fill
 id fill_horizontal
@@ -3626,12 +3626,15 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvCreateOrder
 id tvDining
 id tvDishes
 id tvIdLabel
 id tvName
 id tvOrderId
+id tvOrderIdLabel
 id tvTable
+id tvTableNumberLabel
 id tvTotal
 id tvTypePrice
 id unchecked

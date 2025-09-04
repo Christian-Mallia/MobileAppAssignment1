@@ -14,9 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderListActivity extends AppCompatActivity {
-
     private RecyclerView rv;
-    private OrderListAdapter adapter;
     private DatabaseManager db;
 
     @Override
@@ -30,16 +28,11 @@ public class OrderListActivity extends AppCompatActivity {
         db = new DatabaseManager(this);
         loadOrders();
 
-        FloatingActionButton fabAdd = findViewById(R.id.fabAddOrder);
-        fabAdd.setOnClickListener(v -> {
-            startActivity(new Intent(OrderListActivity.this, OrderFormActivity.class));
+        findViewById(R.id.btnAdd).setOnClickListener(v -> {
+            startActivity(new Intent(this, OrderFormActivity.class));
         });
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        loadOrders();
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
     }
 
     private void loadOrders() {
@@ -47,23 +40,28 @@ public class OrderListActivity extends AppCompatActivity {
         List<Order> orders = new ArrayList<>();
         if (c.moveToFirst()) {
             do {
-                Order o = new Order(
+                orders.add(new Order(
                         c.getInt(0),
                         c.getString(1),
                         c.getString(2),
                         c.getString(3),
                         c.getDouble(4)
-                );
-                orders.add(o);
+                ));
             } while (c.moveToNext());
         }
-        if (c != null && !c.isClosed()) c.close();
+        c.close();
 
-        adapter = new OrderListAdapter(orders, orderId -> {
-            Intent i = new Intent(OrderListActivity.this, OrderFormActivity.class);
+        OrderListAdapter adapter = new OrderListAdapter(orders, orderId -> {
+            Intent i = new Intent(this, OrderFormActivity.class);
             i.putExtra("orderId", orderId);
             startActivity(i);
         });
         rv.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadOrders(); // refresh when returning
     }
 }
