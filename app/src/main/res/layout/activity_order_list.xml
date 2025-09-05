@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Top row with Back (left) and Add Order (right) -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"

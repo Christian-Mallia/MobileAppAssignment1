@@ -27,7 +27,6 @@ public class DishFormActivity extends AppCompatActivity {
 
         db = new DatabaseManager(this);
 
-        // Check if editing existing dish
         if (getIntent().hasExtra("dishId")) {
             dishId = getIntent().getIntExtra("dishId", -1);
             loadDish(dishId);
@@ -90,7 +89,7 @@ public class DishFormActivity extends AppCompatActivity {
                 Toast.makeText(this, "Error: Dish ID already exists", Toast.LENGTH_SHORT).show();
                 return;
             }
-        } else { // updating existing
+        } else {
             db.updateDish(id, name, type, ing, price);
         }
         finish();

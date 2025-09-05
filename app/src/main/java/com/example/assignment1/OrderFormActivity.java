@@ -2,7 +2,6 @@ package com.example.assignment1;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -39,10 +38,8 @@ public class OrderFormActivity extends AppCompatActivity {
 
         db = new DatabaseManager(this);
 
-        // 1) Build grouped dish checkboxes
         loadDishCheckboxes();
 
-        // 2) If editing, restore values and pre-check boxes
         if (getIntent().hasExtra("orderId")) {
             orderId = getIntent().getIntExtra("orderId", -1);
             loadOrder(orderId);
@@ -54,7 +51,6 @@ public class OrderFormActivity extends AppCompatActivity {
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
     }
 
-    /** Creates a checkbox per dish, grouped by type, and wires it to recalc the total on change */
     private void loadDishCheckboxes() {
         Cursor c = db.getAllDishes();
         if (c.moveToFirst()) {
@@ -80,14 +76,12 @@ public class OrderFormActivity extends AppCompatActivity {
         c.close();
     }
 
-    /** Extract clean dish name from checkbox text like: "Burger ($12.5)" -> "Burger" */
     private String nameFromCheckbox(CheckBox cb) {
         String txt = cb.getText().toString();
         int cut = txt.indexOf(" ($");
         return (cut > 0) ? txt.substring(0, cut) : txt;
     }
 
-    /** Sum up prices of all checked boxes and refresh etTotal */
     private void recalculateTotal() {
         float total = 0f;
         total += sumChecked(containerEntree);
@@ -108,7 +102,6 @@ public class OrderFormActivity extends AppCompatActivity {
         return subtotal;
     }
 
-    /** Collect selected dish names into a CSV for saving */
     private String collectSelectedDishesCsv() {
         ArrayList<String> names = new ArrayList<>();
         collectNamesFrom(containerEntree, names);
@@ -131,7 +124,6 @@ public class OrderFormActivity extends AppCompatActivity {
         return "";
     }
 
-    /** Load an existing order, pre-check the saved dishes, then recalc once */
     private void loadOrder(int id) {
         Cursor c = db.getAllOrders();
         if (c.moveToFirst()) {

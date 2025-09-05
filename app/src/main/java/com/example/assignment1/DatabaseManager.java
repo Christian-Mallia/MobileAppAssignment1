@@ -43,7 +43,6 @@ public class DatabaseManager {
                     COL_ORDER_DISHES + " TEXT, " +
                     COL_ORDER_TOTAL + " FLOAT);";
 
-    // ---- Helper ----
     private SQLHelper helper;
     private SQLiteDatabase db;
     private Context context;
@@ -64,7 +63,6 @@ public class DatabaseManager {
         helper.close();
     }
 
-    // ---------------- DISH CRUD ----------------
     public boolean addDish(int id, String name, String type, String ingredients, float price) {
         synchronized (this.db) {
             ContentValues values = new ContentValues();
@@ -101,7 +99,6 @@ public class DatabaseManager {
         db.delete(TABLE_DISH, COL_DISH_ID + "=" + id, null);
     }
 
-    // ---------------- ORDER CRUD ----------------
     public boolean addOrder(int id, String diningOption, String tableNumber, String dishNames, Float totalPrice) {
         synchronized (this.db) {
             ContentValues values = new ContentValues();
@@ -138,7 +135,6 @@ public class DatabaseManager {
         db.delete(TABLE_ORDER, COL_ORDER_ID + "=" + id, null);
     }
 
-    // ---------------- Inner Helper ----------------
     public class SQLHelper extends SQLiteOpenHelper {
         public SQLHelper(Context c) {
             super(c, DB_NAME, null, DB_VERSION);
