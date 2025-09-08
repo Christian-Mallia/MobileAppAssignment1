@@ -12,6 +12,7 @@ id btnAdd
 id btnBack
 id btnDelete
 id btnDishes
+id btnDone
 id btnLogin
 id btnLogout
 id btnOrders
@@ -48,6 +49,7 @@ id tvIdLabel
 id tvName
 id tvOrderId
 id tvOrderIdLabel
+id tvStatus
 id tvTable
 id tvTableNumberLabel
 id tvTotal

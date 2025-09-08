@@ -3216,6 +3216,7 @@ int id btnAdd 0x7f08022d
 int id btnBack 0x7f080216
 int id btnDelete 0x7f080065
 int id btnDishes 0x7f080066
+int id btnDone 0x7f08022e
 int id btnLogin 0x7f080067
 int id btnLogout 0x7f080068
 int id btnOrders 0x7f080069
@@ -3632,6 +3633,7 @@ int id tvIdLabel 0x7f08021c
 int id tvName 0x7f0801f9
 int id tvOrderId 0x7f080224
 int id tvOrderIdLabel 0x7f08022b
+int id tvStatus 0x7f08022f
 int id tvTable 0x7f080225
 int id tvTableNumberLabel 0x7f08022c
 int id tvTotal 0x7f080226

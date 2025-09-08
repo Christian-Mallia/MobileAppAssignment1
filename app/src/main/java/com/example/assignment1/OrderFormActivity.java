@@ -2,6 +2,7 @@ package com.example.assignment1;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -36,6 +37,11 @@ public class OrderFormActivity extends AppCompatActivity {
         containerMain = findViewById(R.id.containerMain);
         containerDrink = findViewById(R.id.containerDrink);
 
+        Button btnSave = findViewById(R.id.btnSave);
+        Button btnDelete = findViewById(R.id.btnDelete);
+        Button btnBack = findViewById(R.id.btnBack);
+        Button btnDone = findViewById(R.id.btnDone);
+
         db = new DatabaseManager(this);
 
         loadDishCheckboxes();
@@ -43,12 +49,15 @@ public class OrderFormActivity extends AppCompatActivity {
         if (getIntent().hasExtra("orderId")) {
             orderId = getIntent().getIntExtra("orderId", -1);
             loadOrder(orderId);
-            findViewById(R.id.btnDelete).setVisibility(android.view.View.VISIBLE);
+            btnDelete.setVisibility(Button.VISIBLE);
+            btnDone.setVisibility(Button.VISIBLE); // show Mark Done button
         }
 
-        findViewById(R.id.btnSave).setOnClickListener(v -> saveOrder());
-        findViewById(R.id.btnDelete).setOnClickListener(v -> deleteOrder());
-        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+        // Button handlers
+        btnSave.setOnClickListener(v -> saveOrder());
+        btnDelete.setOnClickListener(v -> deleteOrder());
+        btnBack.setOnClickListener(v -> finish());
+        btnDone.setOnClickListener(v -> markOrderDone());
     }
 
     private void loadDishCheckboxes() {
@@ -197,6 +206,14 @@ public class OrderFormActivity extends AppCompatActivity {
     private void deleteOrder() {
         if (orderId != -1) {
             db.deleteOrder(orderId);
+            finish();
+        }
+    }
+
+    private void markOrderDone() {
+        if (orderId != -1) {
+            db.markOrderDone(orderId);
+            Toast.makeText(this, "Order marked as Done", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

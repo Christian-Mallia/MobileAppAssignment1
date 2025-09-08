@@ -1,42 +1,48 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
     android:background="#EEEEEE"
-    android:layout_marginBottom="8dp">
+    android:orientation="vertical"
+    android:padding="12dp">
 
     <TextView
         android:id="@+id/tvOrderId"
-        android:text="Order ID: 1"
-        android:textStyle="bold"
-        android:textSize="16sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Order ID: 1"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvDining"
-        android:text="Dining: Dine-in"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Dining: Dine-in" />
 
     <TextView
         android:id="@+id/tvTable"
-        android:text="Table: 3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Table: 3" />
 
     <TextView
         android:id="@+id/tvDishes"
-        android:text="Dishes: Burger, Coke"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Dishes: Burger, Coke" />
 
     <TextView
         android:id="@+id/tvTotal"
-        android:text="Total: $45.00"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Total: $45.00"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

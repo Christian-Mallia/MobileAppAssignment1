@@ -45,7 +45,8 @@ public class OrderListActivity extends AppCompatActivity {
                         c.getString(1),
                         c.getString(2),
                         c.getString(3),
-                        c.getDouble(4)
+                        c.getDouble(4),
+                        c.getString(5)
                 ));
             } while (c.moveToNext());
         }

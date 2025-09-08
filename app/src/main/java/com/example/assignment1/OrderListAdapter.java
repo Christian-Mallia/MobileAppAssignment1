@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> {
@@ -24,7 +25,8 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> 
     }
 
     public static class VH extends RecyclerView.ViewHolder {
-        TextView tvOrderId, tvDining, tvTable, tvDishes, tvTotal;
+        TextView tvOrderId, tvDining, tvTable, tvDishes, tvTotal, tvStatus;
+
         public VH(@NonNull View itemView) {
             super(itemView);
             tvOrderId = itemView.findViewById(R.id.tvOrderId);
@@ -32,6 +34,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> 
             tvTable = itemView.findViewById(R.id.tvTable);
             tvDishes = itemView.findViewById(R.id.tvDishes);
             tvTotal = itemView.findViewById(R.id.tvTotal);
+            tvStatus = itemView.findViewById(R.id.tvStatus);
         }
     }
 
@@ -52,6 +55,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> 
         holder.tvTable.setText("Table: " + (o.getTableNumber().isEmpty() ? "-" : o.getTableNumber()));
         holder.tvDishes.setText("Dishes: " + o.getDishNames());
         holder.tvTotal.setText("Total: $" + o.getTotalPrice());
+        holder.tvStatus.setText("Status: " + o.getStatus());
 
         holder.itemView.setOnClickListener(v -> listener.onClick(o.getId()));
     }

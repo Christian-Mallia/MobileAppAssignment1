@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class DishListAdapter extends RecyclerView.Adapter<DishListAdapter.VH> {
@@ -25,6 +26,7 @@ public class DishListAdapter extends RecyclerView.Adapter<DishListAdapter.VH> {
 
     public static class VH extends RecyclerView.ViewHolder {
         TextView tvName, tvTypePrice;
+
         public VH(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvName);

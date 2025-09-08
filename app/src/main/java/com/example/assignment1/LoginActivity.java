@@ -33,7 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
 
         findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
                 String user = etUsername.getText().toString().trim();
                 String pass = etPassword.getText().toString().trim();
 
