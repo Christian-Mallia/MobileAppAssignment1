@@ -194,13 +194,12 @@
                 android:id="@+id/tvProcessingTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Processing Time: 0 sec"
                 android:layout_marginTop="8dp"
+                android:text="Processing Time: 0 sec"
                 android:textSize="16sp"
-                android:textStyle="italic"/>
+                android:textStyle="italic" />
 
         </LinearLayout>
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

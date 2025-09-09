@@ -4,6 +4,7 @@ color black
 color white
 drawable background
 drawable baseline_person_outline_24
+drawable cutlery
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable outline_info_24

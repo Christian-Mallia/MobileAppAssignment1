@@ -1,7 +1,5 @@
 package com.example.assignment1;
 
-import static androidx.core.util.TimeUtils.formatDuration;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
