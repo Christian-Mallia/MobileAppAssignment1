@@ -5,6 +5,7 @@ public class Dish {
     private String name, type, ingredients;
     private double price;
 
+    //Constructor
     public Dish(int id, String name, String type, String ingredients, double price) {
         this.id = id;
         this.name = name;
@@ -13,6 +14,7 @@ public class Dish {
         this.price = price;
     }
 
+    //Getters and Setters
     public int getId() {
         return id;
     }

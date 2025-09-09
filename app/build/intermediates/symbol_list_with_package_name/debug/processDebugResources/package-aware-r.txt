@@ -3108,6 +3108,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable outline_info_24
+drawable scroll
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3260,6 +3261,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id credentials
 id currentState
 id custom
 id customPanel
@@ -3333,6 +3335,7 @@ id fixed
 id flip
 id floating
 id forever
+id fragment_container
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -3363,6 +3366,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id information
 id invisible
 id inward
 id italic
@@ -3634,6 +3638,8 @@ id tvIdLabel
 id tvName
 id tvOrderId
 id tvOrderIdLabel
+id tvOrderTime
+id tvProcessingTime
 id tvStatus
 id tvTable
 id tvTableNumberLabel

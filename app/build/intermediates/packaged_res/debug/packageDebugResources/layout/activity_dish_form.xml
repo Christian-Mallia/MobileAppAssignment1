@@ -1,148 +1,164 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/scroll">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/addDish"
-            android:text="Add a Dish"
-            android:layout_gravity="center"
-            android:textSize="40dp"
-            android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Add a Dish"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvIdLabel"
-            android:text="Dish ID"
-            android:layout_marginTop="10dp"
-            android:textSize="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Dish ID"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/etID"
-            android:hint="Dish ID"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Dish ID"
+            android:textSize="20dp" />
 
         <TextView
-            android:text="Dish Name"
-            android:layout_marginTop="10dp"
-            android:textSize="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Dish Name"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/etName"
-            android:hint="Dish name"
-            android:layout_marginTop="10dp"
-            android:textSize="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Dish name"
+            android:textSize="20dp" />
 
         <TextView
-            android:text="Dish Type"
-            android:layout_marginTop="10dp"
-            android:textSize="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Dish Type"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <RadioGroup
             android:id="@+id/rgType"
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp" >
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:textSize="20dp">
 
             <RadioButton
                 android:id="@+id/rbEntree"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Entree" />
+                android:text="Entree"
+                android:textSize="20dp" />
 
             <RadioButton
                 android:id="@+id/rbMain"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Main" />
+                android:text="Main"
+                android:textSize="20dp" />
 
             <RadioButton
                 android:id="@+id/rbDrink"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Drink" />
+                android:text="Drink"
+                android:textSize="20dp" />
         </RadioGroup>
 
         <TextView
-            android:text="Ingredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:text="Ingredients"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/etIngredients"
-            android:hint="Ingredients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:hint="Ingredients"
+            android:textSize="20dp" />
 
         <TextView
-            android:text="Price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:text="Price"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/etPrice"
-            android:hint="Price"
-            android:inputType="numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:hint="Price"
+            android:inputType="numberDecimal"
+            android:textSize="20dp" />
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="end"
-            android:paddingTop="12dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="end"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnBack"
-                android:layout_width="115dp"
+                android:layout_width="118dp"
                 android:layout_height="wrap_content"
-                android:text="Back" />
+                android:text="Back"
+                android:textColor="@color/black" />
 
-            <Space android:layout_width="12dp" android:layout_height="0dp"/>
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="0dp" />
 
             <Button
                 android:id="@+id/btnDelete"
-                android:layout_width="115dp"
+                android:layout_width="118dp"
                 android:layout_height="wrap_content"
-                android:text="Delete" />
+                android:text="Delete"
+                android:textColor="@color/black" />
 
-            <Space android:layout_width="12dp" android:layout_height="0dp"/>
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="0dp" />
 
             <Button
                 android:id="@+id/btnSave"
+                android:layout_width="118dp"
+                android:layout_height="wrap_content"
                 android:text="Save"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content" />
+                android:textColor="@color/black" />
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

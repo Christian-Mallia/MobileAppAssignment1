@@ -10,7 +10,7 @@ import android.util.Log;
 public class DatabaseManager {
 
     public static final String DB_NAME = "restaurant.db";
-    public static final int DB_VERSION = 2;  // bumped because we added "status"
+    public static final int DB_VERSION = 3;
 
     // ---------- DISHES ----------
     public static final String TABLE_DISH = "dishes";
@@ -35,7 +35,8 @@ public class DatabaseManager {
     public static final String COL_ORDER_TABLE = "tableNumber";
     public static final String COL_ORDER_DISHES = "dishNames";
     public static final String COL_ORDER_TOTAL = "totalPrice";
-    public static final String COL_ORDER_STATUS = "status"; // NEW
+    public static final String COL_ORDER_STATUS = "status";
+    public static final String COL_ORDER_TIME = "orderTime";
 
     private static final String CREATE_TABLE_ORDER =
             "CREATE TABLE " + TABLE_ORDER + " (" +
@@ -44,7 +45,8 @@ public class DatabaseManager {
                     COL_ORDER_TABLE + " TEXT, " +
                     COL_ORDER_DISHES + " TEXT, " +
                     COL_ORDER_TOTAL + " FLOAT, " +
-                    COL_ORDER_STATUS + " TEXT DEFAULT 'Pending');";
+                    COL_ORDER_STATUS + " TEXT DEFAULT 'Pending', " +
+                    COL_ORDER_TIME + " INTEGER);";
 
     // ---------- DB Helper ----------
     private SQLHelper helper;
@@ -100,6 +102,7 @@ public class DatabaseManager {
         values.put(COL_ORDER_DISHES, dishes);
         values.put(COL_ORDER_TOTAL, total);
         values.put(COL_ORDER_STATUS, "Pending");
+        values.put(COL_ORDER_TIME, System.currentTimeMillis());
 
         try {
             db.insertOrThrow(TABLE_ORDER, null, values);
@@ -148,9 +151,16 @@ public class DatabaseManager {
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE_DISH);
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE_ORDER);
-            onCreate(db);
+            if (oldVersion < 2) {
+                db.execSQL("ALTER TABLE " + TABLE_ORDER +
+                        " ADD COLUMN " + COL_ORDER_STATUS +
+                        " TEXT DEFAULT 'Pending'");
+            }
+            if (oldVersion < 3) {
+                db.execSQL("ALTER TABLE " + TABLE_ORDER +
+                        " ADD COLUMN " + COL_ORDER_TIME +
+                        " INTEGER DEFAULT 0");
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.example.assignment1;
 
+import static androidx.core.util.TimeUtils.formatDuration;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import android.text.format.DateUtils;
 
 public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> {
 
@@ -25,7 +29,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> 
     }
 
     public static class VH extends RecyclerView.ViewHolder {
-        TextView tvOrderId, tvDining, tvTable, tvDishes, tvTotal, tvStatus;
+        TextView tvOrderId, tvDining, tvTable, tvDishes, tvTotal, tvStatus, tvOrderTime;
 
         public VH(@NonNull View itemView) {
             super(itemView);
@@ -35,6 +39,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> 
             tvDishes = itemView.findViewById(R.id.tvDishes);
             tvTotal = itemView.findViewById(R.id.tvTotal);
             tvStatus = itemView.findViewById(R.id.tvStatus);
+            tvOrderTime = itemView.findViewById(R.id.tvOrderTime);
         }
     }
 
@@ -56,6 +61,10 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.VH> 
         holder.tvDishes.setText("Dishes: " + o.getDishNames());
         holder.tvTotal.setText("Total: $" + o.getTotalPrice());
         holder.tvStatus.setText("Status: " + o.getStatus());
+
+        long now = System.currentTimeMillis();
+        CharSequence relativeTime = DateUtils.getRelativeTimeSpanString(o.getOrderTime(), now, DateUtils.MINUTE_IN_MILLIS);
+        holder.tvOrderTime.setText("Processing Time: " + relativeTime);
 
         holder.itemView.setOnClickListener(v -> listener.onClick(o.getId()));
     }

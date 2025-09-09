@@ -4,16 +4,20 @@ public class Order {
     private int id;
     private String diningOption, tableNumber, dishNames, status;
     private Double totalPrice;
+    private long orderTime;
 
-    public Order(int id, String dining, String table, String dishNames, Double total, String status) {
+    //Constructor
+    public Order(int id, String dining, String table, String dishNames, Double total, String status, long orderTime) {
         this.id = id;
         this.diningOption = dining;
         this.tableNumber = table;
         this.dishNames = dishNames;
         this.totalPrice = total;
         this.status = status;
+        this.orderTime = orderTime;
     }
 
+    //Getters and Setters
     public int getId() {
         return id;
     }
@@ -38,6 +42,10 @@ public class Order {
         return status;
     }
 
+    public long getOrderTime() {
+        return orderTime;
+    }
+
     public void setDiningOption(String d) {
         diningOption = d;
     }
@@ -56,5 +64,9 @@ public class Order {
 
     public void setStatus(String s) {
         status = s;
+    }
+
+    public void setOrderTime(long orderTime) {
+        this.orderTime = orderTime;
     }
 }

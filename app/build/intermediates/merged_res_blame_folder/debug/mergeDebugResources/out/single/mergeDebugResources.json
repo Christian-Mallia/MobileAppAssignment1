@@ -8,12 +8,20 @@
         "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\drawable\\baseline_person_outline_24.xml"
     },
     {
+        "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\drawable_ingredient.png.flat",
+        "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\drawable\\ingredient.png"
+    },
+    {
         "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\drawable_loginbackground.png.flat",
         "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\drawable\\loginbackground.png"
     },
     {
         "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\layout_activity_order_form.xml.flat",
         "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\layout\\activity_order_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\layout_fragment_dish_list.xml.flat",
+        "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\layout\\fragment_dish_list.xml"
     },
     {
         "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\mipmap-hdpi_ic_launcher_round.webp.flat",
@@ -44,6 +52,10 @@
         "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\layout_fragment_order_list.xml.flat",
+        "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\layout\\fragment_order_list.xml"
+    },
+    {
         "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
@@ -58,6 +70,10 @@
     {
         "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\drawable_background.jpg.flat",
+        "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\drawable\\background.jpg"
     },
     {
         "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\layout_item_order.xml.flat",
@@ -106,6 +122,10 @@
     {
         "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\drawable_scroll.png.flat",
+        "source": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-main-34:\\drawable\\scroll.png"
     },
     {
         "merged": "C:\\Users\\Christian\\.gradle\\daemon\\8.13\\com.example.assignment1.app-debug-32:\\drawable_ic_launcher_foreground.xml.flat",

@@ -7,6 +7,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import java.util.Set;
 
 public class OrderFormActivity extends AppCompatActivity {
     private EditText etId, etTable, etTotal;
+    private TextView tvProcessingTime;
     private RadioGroup rgDining;
     private LinearLayout containerEntree, containerMain, containerDrink;
     private DatabaseManager db;
@@ -41,6 +43,8 @@ public class OrderFormActivity extends AppCompatActivity {
         Button btnDelete = findViewById(R.id.btnDelete);
         Button btnBack = findViewById(R.id.btnBack);
         Button btnDone = findViewById(R.id.btnDone);
+
+        tvProcessingTime = findViewById(R.id.tvProcessingTime);
 
         db = new DatabaseManager(this);
 
@@ -137,28 +141,51 @@ public class OrderFormActivity extends AppCompatActivity {
         Cursor c = db.getAllOrders();
         if (c.moveToFirst()) {
             do {
-                if (c.getInt(0) == id) {
-                    etId.setText(String.valueOf(c.getInt(0)));
+                if (c.getInt(c.getColumnIndexOrThrow("id")) == id) {
+                    // ID
+                    etId.setText(String.valueOf(c.getInt(c.getColumnIndexOrThrow("id"))));
 
-                    String dining = c.getString(1);
-                    if ("Dine-in".equalsIgnoreCase(dining)) rgDining.check(R.id.rbDineIn);
-                    else if ("Take-away".equalsIgnoreCase(dining)) rgDining.check(R.id.rbTakeAway);
+                    // Dining option
+                    String dining = c.getString(c.getColumnIndexOrThrow("diningOption"));
+                    if ("Dine-in".equalsIgnoreCase(dining)) {
+                        rgDining.check(R.id.rbDineIn);
+                    } else if ("Take-away".equalsIgnoreCase(dining)) {
+                        rgDining.check(R.id.rbTakeAway);
+                    }
 
-                    etTable.setText(c.getString(2));
+                    // Table number
+                    etTable.setText(c.getString(c.getColumnIndexOrThrow("tableNumber")));
 
-                    // Pre-check saved dishes
-                    String[] saved = c.getString(3).split(",\\s*");
+                    // Dishes
+                    String[] saved = c.getString(c.getColumnIndexOrThrow("dishNames")).split(",\\s*");
                     Set<String> savedSet = new HashSet<>(Arrays.asList(saved));
                     precheckBoxes(savedSet);
 
-                    // Recalculate from the current checked state (ignore stored total to avoid drift)
+                    // Recalculate from checkboxes instead of trusting stored total
                     recalculateTotal();
+
+                    // Status
+                    String status = c.getString(c.getColumnIndexOrThrow("status"));
+                    Toast.makeText(this, "Order Status: " + status, Toast.LENGTH_SHORT).show();
+
+                    // Order Time + Processing Time
+                    int colTime = c.getColumnIndex("orderTime");
+                    if (colTime != -1) {  // make sure the column exists
+                        long orderTime = c.getLong(colTime);
+                        long now = System.currentTimeMillis();
+                        String processingTime = formatDuration(now - orderTime);
+                        tvProcessingTime.setText("Processing Time: " + processingTime);
+                    } else {
+                        tvProcessingTime.setText("Processing Time: N/A");
+                    }
+
                     break;
                 }
             } while (c.moveToNext());
         }
         c.close();
     }
+
 
     private void precheckBoxes(Set<String> names) {
         precheckInContainer(containerEntree, names);
@@ -215,6 +242,22 @@ public class OrderFormActivity extends AppCompatActivity {
             db.markOrderDone(orderId);
             Toast.makeText(this, "Order marked as Done", Toast.LENGTH_SHORT).show();
             finish();
+        }
+    }
+
+    private String formatDuration(long millis) {
+        long seconds = millis / 1000;
+        long minutes = seconds / 60;
+        long hours = minutes / 60;
+        seconds %= 60;
+        minutes %= 60;
+
+        if (hours > 0) {
+            return String.format("%d hr %d min %d sec", hours, minutes, seconds);
+        } else if (minutes > 0) {
+            return String.format("%d min %d sec", minutes, seconds);
+        } else {
+            return String.format("%d sec", seconds);
         }
     }
 }

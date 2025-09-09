@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/scroll">
 
     <ScrollView
-        android:layout_width="match_parent" android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:padding="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/tvCreateOrder"
@@ -18,147 +20,185 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Create an Order"
+                android:textColor="@color/black"
                 android:textSize="40dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvOrderIdLabel"
-                android:text="Order ID"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Order ID"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/etId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:hint="Order ID"
                 android:inputType="number"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textSize="20dp" />
 
             <RadioGroup
                 android:id="@+id/rgDining"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:textSize="20dp">
 
                 <RadioButton
                     android:id="@+id/rbDineIn"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Dine-in" />
+                    android:text="Dine-in"
+                    android:textColor="@color/black" />
 
                 <RadioButton
                     android:id="@+id/rbTakeAway"
-                    android:text="Take-away"
                     android:layout_width="120dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Take-away"
+                    android:textColor="@color/black" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/tvTableNumberLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Table Number"
                 android:layout_marginTop="10dp"
+                android:text="Table Number"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/etTable"
-                android:hint="Table Number (Dine in only)"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Table Number (Dine in only)" />
 
             <TextView
-                android:text="Entrees"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textSize="20dp" />
+                android:text="Entrees"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/containerEntree"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
             <TextView
-                android:text="Mains"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textSize="20dp" />
+                android:text="Mains"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/containerMain"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
             <TextView
-                android:text="Drinks"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textSize="20dp" />
+                android:text="Drinks"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/containerDrink"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
             <!-- Total Price -->
             <TextView
-                android:text="Total Price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:text="Total Price"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/etTotal"
-                android:enabled="false"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:enabled="false" />
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:gravity="end"
-                android:paddingTop="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btnBack"
+                    android:layout_width="118dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
                     android:text="Back"
-                    android:layout_width="115dp"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@color/black" />
 
-                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="0dp" />
 
                 <Button
                     android:id="@+id/btnDelete"
+                    android:layout_width="118dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:text="Delete"
-                    android:layout_width="115dp"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@color/black" />
 
-                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="0dp" />
 
                 <Button
                     android:id="@+id/btnSave"
+                    android:layout_width="118dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
                     android:text="Save"
-                    android:layout_width="115dp"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@color/black" />
+
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="118dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Mark Done"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvProcessingTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Processing Time: 0 sec"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textStyle="italic"/>
+
         </LinearLayout>
     </ScrollView>
 
